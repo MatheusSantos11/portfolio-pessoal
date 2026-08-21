@@ -6,7 +6,8 @@ import plotly.express as px
 import os
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY, dbc.icons.BOOTSTRAP], suppress_callback_exceptions=True)
-server = app.server
+server = app.server # Configuração essencial para o Render/Gunicorn rodar
+
 app.title = "Matheus Santos - Portfolio"
 
 # ==========================================
@@ -74,7 +75,7 @@ sidebar = html.Div([
         dbc.NavLink([html.I(className="bi bi-code-slash me-2"), "Skills"], href="/skills", active="exact"),
         dbc.NavLink([html.I(className="bi bi-graph-up me-2"), "Análise de Dados"], href="/analise", active="exact"),
     ], vertical=True, pills=True, className="mt-4"),
-], style=SIDEBAR_STYLE)
+], style=SIDEBAR_STYLE, id="sidebar") # Adicionado ID sidebar aqui
 
 # ==========================================
 # 3. PÁGINAS DO SISTEMA
@@ -132,7 +133,7 @@ page_sobre = html.Div([
             color="info", 
             className="px-4 py-2"
         ),
-    ], className="d-flex justify-content-center mb-5")
+    ], className="d-flex justify-content-center flex-wrap gap-3 mb-5")
 ])
 
 # Função para criar os Cards Modais (Qualificações)
@@ -214,13 +215,12 @@ page_qualificacoes = html.Div([
     ], className="d-flex align-items-stretch")
 ])
 
-# Página: Skills (TOTALMENTE REFORMULADA PARA PREENCHER A TELA)
+# Página: Skills
 page_skills = html.Div([
     html.H2("Competências Técnicas", className="mb-4 text-info"),
     html.P("Um panorama do meu ecossistema de desenvolvimento, ferramentas e nível prático em cada tecnologia.", className="text-light mb-4"),
 
     dbc.Row([
-        # Coluna 1: Linguagens (Barras de Progresso Animadas)
         dbc.Col(dbc.Card([
             dbc.CardHeader(html.H5([html.I(className="bi bi-code-slash me-2"), "Stack de Desenvolvimento"], className="text-info m-0")),
             dbc.CardBody([
@@ -241,11 +241,9 @@ page_skills = html.Div([
             ])
         ], className="shadow mb-4 h-100", style={"backgroundColor": "#222", "borderColor": "#444"}), md=6),
 
-        # Coluna 2: Infra, Ferramentas e Versionamento (Badges/Etiquetas)
         dbc.Col(dbc.Card([
-            dbc.CardHeader(html.H5([html.I(className="bi bi-pc-display me-2"), "Sistemas, Infraestrutura & Versionamento"], className="text-info m-0")),
+            dbc.CardHeader(html.H5([html.I(className="bi bi-pc-display me-2"), "Sistemas, Infra & Versionamento"], className="text-info m-0")),
             dbc.CardBody([
-                # Destaque absoluto para GIT e GITHUB
                 html.P("Controle de Versão e Código-Fonte:", className="text-light mb-2 fw-bold"),
                 html.Div([
                     dbc.Badge([html.I(className="bi bi-git me-2"), "Git"], color="danger", className="me-2 mb-3 p-2 fs-6 shadow"),
@@ -274,7 +272,7 @@ page_skills = html.Div([
                 ])
             ])
         ], className="shadow mb-4 h-100", style={"backgroundColor": "#222", "borderColor": "#444"}), md=6),
-    ], className="align-items-stretch"), # Garante que os dois cards tenham a mesma altura
+    ], className="align-items-stretch"),
 ])
 
 # Página: Análise de Dados
@@ -292,6 +290,30 @@ page_analise = html.Div([
 # ==========================================
 app.layout = html.Div([
     dcc.Location(id="url"),
+    
+    # INJEÇÃO DE CSS PARA RESPONSIVIDADE (CELULAR)
+    html.Style('''
+        @media (max-width: 768px) {
+            #sidebar {
+                position: relative !important;
+                width: 100% !important;
+                height: auto !important;
+                padding-bottom: 2rem !important;
+            }
+            #page-content {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding: 1rem !important;
+            }
+            /* Corrige botões de contato na versão mobile */
+            .d-flex.justify-content-center.mb-5 > .btn {
+                width: 100%;
+                margin-bottom: 10px;
+                margin-right: 0 !important;
+            }
+        }
+    '''),
+    
     sidebar,
     html.Div(id="page-content", style=CONTENT_STYLE)
 ])
