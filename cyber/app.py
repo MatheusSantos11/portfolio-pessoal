@@ -6,6 +6,7 @@ import plotly.express as px
 import os
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY, dbc.icons.BOOTSTRAP], suppress_callback_exceptions=True)
+server = app.server
 app.title = "Matheus Santos - Portfolio"
 
 # ==========================================
