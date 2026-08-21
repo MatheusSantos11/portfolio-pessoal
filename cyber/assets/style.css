@@ -1,0 +1,20 @@
+/* Responsividade para Celulares e Tablets */
+@media (max-width: 768px) {
+    #sidebar {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        padding-bottom: 2rem !important;
+    }
+    #page-content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 1rem !important;
+    }
+    /* Corrige botões de contato na versão mobile para ficarem empilhados e bonitos */
+    .d-flex.justify-content-center.mb-5 > .btn {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0 !important;
+    }
+}

@@ -290,30 +290,6 @@ page_analise = html.Div([
 # ==========================================
 app.layout = html.Div([
     dcc.Location(id="url"),
-    
-    # INJEÇÃO DE CSS PARA RESPONSIVIDADE (CELULAR)
-    html.Style('''
-        @media (max-width: 768px) {
-            #sidebar {
-                position: relative !important;
-                width: 100% !important;
-                height: auto !important;
-                padding-bottom: 2rem !important;
-            }
-            #page-content {
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                padding: 1rem !important;
-            }
-            /* Corrige botões de contato na versão mobile */
-            .d-flex.justify-content-center.mb-5 > .btn {
-                width: 100%;
-                margin-bottom: 10px;
-                margin-right: 0 !important;
-            }
-        }
-    '''),
-    
     sidebar,
     html.Div(id="page-content", style=CONTENT_STYLE)
 ])
