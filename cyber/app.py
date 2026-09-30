@@ -6,7 +6,7 @@ import plotly.express as px
 import os
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY, dbc.icons.BOOTSTRAP], suppress_callback_exceptions=True)
-server = app.server # Configuração essencial para o Render/Gunicorn rodar
+server = app.server
 
 app.title = "Matheus Santos - Portfolio"
 
@@ -185,17 +185,17 @@ page_qualificacoes = html.Div([
     
     dbc.Row([
         dbc.Col(criar_card_modal(
-            1, "Graduação em Engenharia de Software", "FIAP", "Em andamento", 
+            1, "Graduação em Engenharia de Software", "FIAP", "Previsão de Conclusão: 2028", 
             "Foco intensivo em arquitetura de sistemas, metodologias ágeis, orientação a objetos e desenvolvimento em backend para criar softwares escaláveis. Durante a graduação, tenho desenvolvido projetos práticos colaborativos e aprimorado minhas habilidades lógicas em linguagens de mercado como Java, Python e C++.",
             "images (7).png"
         ), md=4, className="mb-3"),
         dbc.Col(criar_card_modal(
-            2, "Especialização em Segurança de Dados", "FIAP", "2026", 
+            2, "Especialização em Segurança de Dados", "FIAP", "Concluído em 2026", 
             "Estudo aprofundado em técnicas de proteção da informação, criptografia, prevenção de intrusões (SQLi, XSS) e políticas de acesso corporativas.",
             "images (7).png"
         ), md=4, className="mb-3"),
         dbc.Col(criar_card_modal(
-            3, "Técnico de Manutenção Eletroeletrônica", "SENAI", "2024", 
+            3, "Técnico de Manutenção Eletroeletrônica", "SENAI", "Concluído em 2024", 
             "Compreensão avançada sobre circuitos, eletricidade e eletrônica. Uma base vital que me permite entender a computação desde os pulsos físicos até o processamento lógico.",
             "logo-senai-cor-1.jpg"
         ), md=4, className="mb-3"),
@@ -203,17 +203,17 @@ page_qualificacoes = html.Div([
     
     dbc.Row([
         dbc.Col(criar_card_modal(
-            4, "Curso Avançado de C#", "Alura", "Concluído", 
+            4, "Curso Avançado de C#", "Alura", "Concluído em 2026", 
             "Domínio da sintaxe e da arquitetura .NET para a construção de soluções corporativas, APIs estruturadas e manipulação segura de dados.",
             "4975968.png"
         ), md=4, className="mb-3"),
         dbc.Col(criar_card_modal(
-            5, "Ensino Médio Técnico em Informática", "Centro Educacional ETIP", "Concluído", 
+            5, "Ensino Médio Técnico em Informática", "Centro Educacional ETIP", "Concluído em 2024", 
             "Formação que uniu o currículo do ensino médio com conhecimentos técnicos aprofundados em informática, estruturando a base de lógica de programação para a minha entrada definitiva na área de tecnologia.",
             "images (8).png"
         ), md=4, className="mb-3"),
         dbc.Col(criar_card_modal(
-            6, "Google Certified Associate Cloud Engineer", "Alura", "2026", 
+            6, "Google Certified Associate Cloud Engineer", "Alura", "Concluído em 2026", 
             "Certificação focada em infraestrutura cloud, gerenciamento de serviços no Google Cloud Platform (GCP), implantação de aplicações escaláveis e segurança em ambientes de nuvem.",
             "4975968.png"
         ), md=4, className="mb-3"),
@@ -221,12 +221,25 @@ page_qualificacoes = html.Div([
 
     dbc.Row([
         dbc.Col(criar_card_modal(
-            7, "Extensões em Defesa Cibernética", "FIAP", "2026", 
-            "Trilha completa de aprofundamento em cibersegurança composta por quatro formações: Biohacking, Deep Web e Criptografia; Cybersecurity; Cybersecurity Hacker Skills; e Perícia Forense em Defesa Cibernética.",
+            7, "Biohacking, Deep Web e Criptografia", "FIAP", "Concluído em 2026", 
+            "Exploração de técnicas de biohacking, arquitetura e navegação segura na Deep Web, além de fundamentos de criptografia para proteção e privacidade de dados.",
             "images (7).png"
         ), md=4, className="mb-3"),
         dbc.Col(criar_card_modal(
-            8, "Análise de Dados e Power BI", "SENAI", "2024", 
+            8, "Cybersecurity Hacker Skills", "FIAP", "Concluído em 2026", 
+            "Desenvolvimento de habilidades práticas em segurança ofensiva e defensiva, mapeamento de vulnerabilidades, exploração de falhas e aplicação de técnicas de pentest.",
+            "images (7).png"
+        ), md=4, className="mb-3"),
+        dbc.Col(criar_card_modal(
+            9, "Perícia Forense em Defesa Cibernética", "FIAP", "Concluído em 2026", 
+            "Estudo de metodologias de investigação digital, resposta a incidentes, e técnicas de coleta e análise de evidências em sistemas informáticos comprometidos.",
+            "images (7).png"
+        ), md=4, className="mb-3"),
+    ], className="d-flex align-items-stretch"),
+
+    dbc.Row([
+        dbc.Col(criar_card_modal(
+            10, "Análise de Dados e Power BI", "SENAI", "Concluído em 2024", 
             "Capacitação em inteligência de negócios (Business Intelligence), modelagem de dados e criação de dashboards interativos no Power BI para suporte à tomada de decisão.",
             "logo-senai-cor-1.jpg"
         ), md=4, className="mb-3"),
@@ -242,20 +255,20 @@ page_skills = html.Div([
         dbc.Col(dbc.Card([
             dbc.CardHeader(html.H5([html.I(className="bi bi-code-slash me-2"), "Stack de Desenvolvimento"], className="text-info m-0")),
             dbc.CardBody([
-                html.Div("Java & C# (.NET)", className="text-light mb-1 fw-bold"),
+                html.Div("Java, C# (.NET) & C++", className="text-light mb-1 fw-bold"),
                 dbc.Progress(value=85, color="success", className="mb-4", style={"height": "14px"}, animated=True, striped=True),
                 
-                html.Div("Python & C++", className="text-light mb-1 fw-bold"),
-                dbc.Progress(value=75, color="info", className="mb-4", style={"height": "14px"}),
+                html.Div("Python (Pandas, Dash) & SQL", className="text-light mb-1 fw-bold"),
+                dbc.Progress(value=80, color="info", className="mb-4", style={"height": "14px"}),
                 
-                html.Div("React.js, Node.js & TypeScript", className="text-light mb-1 fw-bold"),
+                html.Div("JavaScript, TypeScript, React & Node.js", className="text-light mb-1 fw-bold"),
                 dbc.Progress(value=75, color="warning", className="mb-4", style={"height": "14px"}),
                 
-                html.Div("SQL (Modelagem e Consultas)", className="text-light mb-1 fw-bold"),
-                dbc.Progress(value=80, color="danger", className="mb-4", style={"height": "14px"}),
-                
                 html.Div("Power BI & Análise de Dados", className="text-light mb-1 fw-bold"),
-                dbc.Progress(value=80, color="primary", className="mb-2", style={"height": "14px"}),
+                dbc.Progress(value=80, color="primary", className="mb-4", style={"height": "14px"}),
+
+                html.Div("Cibersegurança (Criptografia & Forense)", className="text-light mb-1 fw-bold"),
+                dbc.Progress(value=75, color="danger", className="mb-2", style={"height": "14px"}),
             ])
         ], className="shadow mb-4 h-100", style={"backgroundColor": "#222", "borderColor": "#444"}), md=6),
 
@@ -276,16 +289,18 @@ page_skills = html.Div([
                     dbc.Badge("Ubuntu / Linux", color="warning", text_color="dark", className="me-2 mb-3 p-2 fs-6"),
                     dbc.Badge("Google Cloud (GCP)", color="primary", className="me-2 mb-3 p-2 fs-6"),
                     dbc.Badge("Docker / Containers", color="info", className="me-2 mb-3 p-2 fs-6"),
-                    dbc.Badge("Hardware & Redes", color="success", className="me-2 mb-3 p-2 fs-6"),
+                    dbc.Badge("Redes (TCP/IP) & Portas", color="success", className="me-2 mb-3 p-2 fs-6"),
+                    dbc.Badge("Hardware Troubleshooting", color="dark", className="border me-2 mb-3 p-2 fs-6"),
                 ]),
 
                 html.Hr(style={"borderColor": "#555"}),
                 
-                html.P("Idiomas & Soft Skills:", className="text-light mb-2 fw-bold"),
+                html.P("Fundamentos & Soft Skills:", className="text-light mb-2 fw-bold"),
                 html.Div([
                     dbc.Badge("Inglês Avançado", color="success", className="me-2 mb-2 p-2"),
-                    dbc.Badge("Espanhol Básico", color="secondary", className="me-2 mb-2 p-2"),
                     dbc.Badge("Metodologias Ágeis", color="secondary", className="me-2 mb-2 p-2"),
+                    dbc.Badge("Lógica de Programação", color="secondary", className="me-2 mb-2 p-2"),
+                    dbc.Badge("Ética na IA", color="secondary", className="me-2 mb-2 p-2"),
                 ])
             ])
         ], className="shadow mb-4 h-100", style={"backgroundColor": "#222", "borderColor": "#444"}), md=6),
