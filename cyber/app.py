@@ -298,6 +298,7 @@ page_skills = html.Div([
                 html.P("Fundamentos & Soft Skills:", className="text-light mb-2 fw-bold"),
                 html.Div([
                     dbc.Badge("Inglês Avançado", color="success", className="me-2 mb-2 p-2"),
+                    dbc.Badge("Espanhol Básico", color="secondary", className="me-2 mb-2 p-2"),
                     dbc.Badge("Metodologias Ágeis", color="secondary", className="me-2 mb-2 p-2"),
                     dbc.Badge("Lógica de Programação", color="secondary", className="me-2 mb-2 p-2"),
                     dbc.Badge("Ética na IA", color="secondary", className="me-2 mb-2 p-2"),
