@@ -1,39 +1,55 @@
-# 🛡️ CyberSec Portfolio Dashboard
+# 🚀 Portfólio Profissional & Dashboard de Cibersegurança
 
-Um dashboard interativo e profissional desenvolvido em **Python com Dash**, construído para atuar como um portfólio pessoal e apresentar uma análise de dados focada no mercado de Cibersegurança. 
+Portfólio interativo desenvolvido em **Python (Dash & Plotly)** para a avaliação acadêmica (CP1) e para o posicionamento de marca pessoal como **Engenheiro de Software**. O projeto une desenvolvimento full-stack, infraestrutura, cibersegurança e uma análise de mercado baseada em dados reais sobre investimentos globais em segurança da informação.
 
-Este projeto foi desenvolvido como parte da avaliação (CP1) da disciplina de Data Science and Statistical Computing do curso de Engenharia de Software da FIAP.
+---
 
-## 🚀 Funcionalidades
+## 🛠️ Tecnologias e Stack Utilizadas
 
-O painel é dividido em quatro seções principais acessíveis através de uma barra de navegação lateral fixa:
+*   **Backend & Interface:** Python 3.11+, Dash, Dash Bootstrap Components (Tema *Darkly*).
+*   **Análise de Dados & Gráficos:** Pandas, Plotly Express, Openpyxl.
+*   **Servidor Web (Produção):** Gunicorn.
+*   **Infraestrutura & Deploy:** Render (Cloud Hosting), Cloudflare Tunnels (Self-hosting), Git & GitHub, Ubuntu/Linux.
+*   **Linguagens & Ecossistema:** Java, C#, C++, Python, JavaScript, TypeScript, React, Node.js, SQL, Power BI.
 
-*   **👤 Quem sou eu:** Apresentação profissional detalhada, destacando vivência com infraestrutura, desenvolvimento de software e foco em Cibersegurança. Inclui links rápidos para LinkedIn, GitHub e E-mail.
-*   **🎓 Qualificações:** Uma grade de cards interativos. Ao clicar na logo de uma instituição (FIAP, SENAI, Alura, ETIP), um modal central (pop-up) é aberto detalhando os aprendizados daquela formação.
-*   **💻 Skills:** Um painel imponente utilizando barras de progresso animadas e badges (etiquetas) para ilustrar o nível de domínio em linguagens de programação (Java, C#, Python, C++, React), sistemas (Ubuntu/Linux), infraestrutura (Docker) e versionamento (Git/GitHub).
-*   **📊 Análise de Dados:** Apresenta gráficos interativos (linhas e barras) gerados com Plotly, baseados na planilha `Cybersecurity_Investment_Dataset_2020_2024.xlsx`, ilustrando o crescimento dos aportes financeiros no setor de segurança da informação global.
+---
 
-## 🛠️ Tecnologias Utilizadas
+## 📱 Funcionalidades do Sistema
 
-*   **Linguagem Principal:** Python 3.x
-*   **Framework Web:** Dash (by Plotly)
-*   **Estilização e UI:** Dash Bootstrap Components (Tema DARKLY)
-*   **Manipulação de Dados:** Pandas
-*   **Visualização de Dados:** Plotly Express
+1.  **Quem Sou Eu:** Apresentação profissional destacando a transição da base técnica em hardware/eletroeletrônica (SENAI) para o desenvolvimento de software corporativo e cibersegurança (FIAP).
+2.  **Qualificações Interativas:** Sistema de cartões modais dinâmicos detalhando formações acadêmicas, cursos técnicos e certificações de mercado.
+3.  **Competências Técnicas (Skills):** Barras de progresso e distintivos (*badges*) divididos entre stack de desenvolvimento, infraestrutura, nuvem (GCP) e ferramentas analíticas.
+4.  **Análise de Dados (Cybersecurity):** Dashboard interativo com gráficos de linha e barras analisando a escalabilidade dos investimentos globais em cibersegurança entre 2020 e 2024.
+5.  **Design Responsivo (Mobile & Desktop):** Layout adaptado automaticamente para computadores, tablets e telemóveis através de regras de CSS personalizadas na pasta `assets/`.
 
-## 📁 Estrutura do Projeto
+---
 
-Para que o aplicativo funcione perfeitamente, os arquivos devem estar organizados da seguinte maneira no seu computador:
+## 🎓 Certificações & Formações Exibidas
+
+*   **Graduação em Engenharia de Software** (FIAP | Previsão: 2028)
+*   **Especialização em Segurança de Dados** (FIAP | 2026)
+*   **Google Certified Associate Cloud Engineer** (Alura | 2026)
+*   **Extensões em Defesa Cibernética (FIAP | 2026):**
+    *   Biohacking, Deep Web e Criptografia
+    *   Cybersecurity Hacker Skills
+    *   Perícia Forense em Defesa Cibernética
+*   **Curso Avançado de C#** (.NET / Alura | 2026)
+*   **Análise de Dados e Power BI** (SENAI | 2024)
+*   **Técnico de Manutenção Eletroeletrônica** (SENAI | 2024)
+*   **Ensino Médio Técnico em Informática** (ETIP | 2024)
+
+---
+
+## 📂 Estrutura do Repositório
 
 ```text
-seu_projeto/
+portfolio-pessoal/
 │
-├── app.py (ou cp1.py - Código principal do dashboard)
-├── Cybersecurity_Investment_Dataset_2020_2024.xlsx (Base de dados)
+├── assets/
+│   ├── style.css           # Estilos e responsividade mobile
+│   ├── favicon.ico         # Ícone da aplicação
+│   └── [imagens/logos]     # Logótipos institucionais e foto de perfil
 │
-└── assets/                        # PASTA OBRIGATÓRIA PARA IMAGENS
-    ├── IMG-20250916-WA0410.jpg    # Foto de perfil
-    ├── images (7).png             # Logo FIAP
-    ├── logo-senai-cor-1.jpg       # Logo SENAI
-    ├── 4975968.png                # Logo Alura
-    └── images (8).png             # Logo ETIP
+├── app.py                  # Código principal da aplicação Dash
+├── requirements.txt        # Dependências do projeto Python
+└── Cybersecurity_Investment_Dataset_2020_2024.xlsx  # Dataset de análise de mercado
