@@ -75,7 +75,7 @@ sidebar = html.Div([
         dbc.NavLink([html.I(className="bi bi-code-slash me-2"), "Skills"], href="/skills", active="exact"),
         dbc.NavLink([html.I(className="bi bi-graph-up me-2"), "Análise de Dados"], href="/analise", active="exact"),
     ], vertical=True, pills=True, className="mt-4"),
-], style=SIDEBAR_STYLE, id="sidebar") # Adicionado ID sidebar aqui
+], style=SIDEBAR_STYLE, id="sidebar")
 
 # ==========================================
 # 3. PÁGINAS DO SISTEMA
@@ -186,17 +186,17 @@ page_qualificacoes = html.Div([
     dbc.Row([
         dbc.Col(criar_card_modal(
             1, "Graduação em Engenharia de Software", "FIAP", "Em andamento", 
-            "Foco intensivo em arquitetura de sistemas, metodologias ágeis, orientação a objetos e desenvolvimento em backend para criar softwares escaláveis. Durante a graduação, tenho desenvolvido projetos práticos colaborativos e aprimorado minhas habilidades lógicas em linguagens de mercado como Java, Python e C++. O curso tem sido fundamental para consolidar minha base teórica e prática, me preparando para atuar como Engenheiro de Software Júnior em ambientes corporativos de alta exigência.",
+            "Foco intensivo em arquitetura de sistemas, metodologias ágeis, orientação a objetos e desenvolvimento em backend para criar softwares escaláveis. Durante a graduação, tenho desenvolvido projetos práticos colaborativos e aprimorado minhas habilidades lógicas em linguagens de mercado como Java, Python e C++.",
             "images (7).png"
         ), md=4, className="mb-3"),
         dbc.Col(criar_card_modal(
             2, "Especialização em Segurança de Dados", "FIAP", "2026", 
-            "Estudo aprofundado em técnicas de proteção da informação, criptografia, prevenção de intrusões (SQLi, XSS) e políticas de acesso corporativas. A especialização abrange desde a segurança em infraestruturas e redes até o hardening de sistemas operacionais, aliando meu conhecimento prático em ambientes Linux (Ubuntu) com as melhores práticas de defesa cibernética exigidas pelas grandes empresas de tecnologia.",
+            "Estudo aprofundado em técnicas de proteção da informação, criptografia, prevenção de intrusões (SQLi, XSS) e políticas de acesso corporativas.",
             "images (7).png"
         ), md=4, className="mb-3"),
         dbc.Col(criar_card_modal(
             3, "Técnico de Manutenção Eletroeletrônica", "SENAI", "2024", 
-            "Compreensão avançada sobre circuitos, eletricidade e eletrônica. Uma base vital que me permite entender a computação desde os pulsos físicos até o processamento lógico. Este curso desenvolveu minha capacidade de troubleshooting de hardware, montagem e manutenção de equipamentos, habilidades que utilizo frequentemente na otimização de setups de alto desempenho e no diagnóstico preciso de falhas em nível físico.",
+            "Compreensão avançada sobre circuitos, eletricidade e eletrônica. Uma base vital que me permite entender a computação desde os pulsos físicos até o processamento lógico.",
             "logo-senai-cor-1.jpg"
         ), md=4, className="mb-3"),
     ], className="d-flex align-items-stretch"),
@@ -204,13 +204,31 @@ page_qualificacoes = html.Div([
     dbc.Row([
         dbc.Col(criar_card_modal(
             4, "Curso Avançado de C#", "Alura", "Concluído", 
-            "Domínio da sintaxe e da arquitetura .NET para a construção de soluções corporativas, APIs estruturadas e manipulação segura de dados. O treinamento focou no desenvolvimento backend sólido, aplicando conceitos avançados de Orientação a Objetos e boas práticas de estruturação de código, essenciais para a criação de aplicações escaláveis, robustas e seguras.",
+            "Domínio da sintaxe e da arquitetura .NET para a construção de soluções corporativas, APIs estruturadas e manipulação segura de dados.",
             "4975968.png"
         ), md=4, className="mb-3"),
         dbc.Col(criar_card_modal(
             5, "Ensino Médio Técnico em Informática", "Centro Educacional ETIP", "Concluído", 
-            "Formação que uniu o currículo do ensino médio com conhecimentos técnicos aprofundados em informática, estruturando a base de lógica de programação para a minha entrada definitiva na área de tecnologia. Foi neste período que consolidei meus primeiros contatos reais com desenvolvimento, banco de dados e infraestrutura, criando a disciplina técnica necessária para evoluir no ecossistema de TI.",
+            "Formação que uniu o currículo do ensino médio com conhecimentos técnicos aprofundados em informática, estruturando a base de lógica de programação para a minha entrada definitiva na área de tecnologia.",
             "images (8).png"
+        ), md=4, className="mb-3"),
+        dbc.Col(criar_card_modal(
+            6, "Google Certified Associate Cloud Engineer", "Alura", "2026", 
+            "Certificação focada em infraestrutura cloud, gerenciamento de serviços no Google Cloud Platform (GCP), implantação de aplicações escaláveis e segurança em ambientes de nuvem.",
+            "4975968.png"
+        ), md=4, className="mb-3"),
+    ], className="d-flex align-items-stretch"),
+
+    dbc.Row([
+        dbc.Col(criar_card_modal(
+            7, "Extensões em Defesa Cibernética", "FIAP", "2026", 
+            "Trilha completa de aprofundamento em cibersegurança composta por quatro formações: Biohacking, Deep Web e Criptografia; Cybersecurity; Cybersecurity Hacker Skills; e Perícia Forense em Defesa Cibernética.",
+            "images (7).png"
+        ), md=4, className="mb-3"),
+        dbc.Col(criar_card_modal(
+            8, "Análise de Dados e Power BI", "SENAI", "2024", 
+            "Capacitação em inteligência de negócios (Business Intelligence), modelagem de dados e criação de dashboards interativos no Power BI para suporte à tomada de decisão.",
+            "logo-senai-cor-1.jpg"
         ), md=4, className="mb-3"),
     ], className="d-flex align-items-stretch")
 ])
@@ -230,19 +248,19 @@ page_skills = html.Div([
                 html.Div("Python & C++", className="text-light mb-1 fw-bold"),
                 dbc.Progress(value=75, color="info", className="mb-4", style={"height": "14px"}),
                 
-                html.Div("React.js & JavaScript / TypeScript", className="text-light mb-1 fw-bold"),
-                dbc.Progress(value=70, color="warning", className="mb-4", style={"height": "14px"}),
+                html.Div("React.js, Node.js & TypeScript", className="text-light mb-1 fw-bold"),
+                dbc.Progress(value=75, color="warning", className="mb-4", style={"height": "14px"}),
                 
                 html.Div("SQL (Modelagem e Consultas)", className="text-light mb-1 fw-bold"),
                 dbc.Progress(value=80, color="danger", className="mb-4", style={"height": "14px"}),
                 
-                html.Div("HTML5, CSS3 & Node.js", className="text-light mb-1 fw-bold"),
-                dbc.Progress(value=85, color="primary", className="mb-2", style={"height": "14px"}),
+                html.Div("Power BI & Análise de Dados", className="text-light mb-1 fw-bold"),
+                dbc.Progress(value=80, color="primary", className="mb-2", style={"height": "14px"}),
             ])
         ], className="shadow mb-4 h-100", style={"backgroundColor": "#222", "borderColor": "#444"}), md=6),
 
         dbc.Col(dbc.Card([
-            dbc.CardHeader(html.H5([html.I(className="bi bi-pc-display me-2"), "Sistemas, Infra & Versionamento"], className="text-info m-0")),
+            dbc.CardHeader(html.H5([html.I(className="bi bi-pc-display me-2"), "Infraestrutura & Ferramentas"], className="text-info m-0")),
             dbc.CardBody([
                 html.P("Controle de Versão e Código-Fonte:", className="text-light mb-2 fw-bold"),
                 html.Div([
@@ -253,22 +271,21 @@ page_skills = html.Div([
                 
                 html.Hr(style={"borderColor": "#555"}),
                 
-                html.P("Infraestrutura & Redes:", className="text-light mb-2 fw-bold"),
+                html.P("Infraestrutura, Nuvem & Redes:", className="text-light mb-2 fw-bold"),
                 html.Div([
                     dbc.Badge("Ubuntu / Linux", color="warning", text_color="dark", className="me-2 mb-3 p-2 fs-6"),
+                    dbc.Badge("Google Cloud (GCP)", color="primary", className="me-2 mb-3 p-2 fs-6"),
                     dbc.Badge("Docker / Containers", color="info", className="me-2 mb-3 p-2 fs-6"),
-                    dbc.Badge("Hardware (Troubleshooting)", color="success", className="me-2 mb-3 p-2 fs-6"),
-                    dbc.Badge("Redes (TCP/IP, Portas)", color="primary", className="me-2 mb-3 p-2 fs-6"),
-                    dbc.Badge("Umbrel (Self-hosting)", color="dark", className="border me-2 mb-3 p-2 fs-6"),
+                    dbc.Badge("Hardware & Redes", color="success", className="me-2 mb-3 p-2 fs-6"),
                 ]),
 
                 html.Hr(style={"borderColor": "#555"}),
                 
-                html.P("Ferramentas Extras:", className="text-light mb-2 fw-bold"),
+                html.P("Idiomas & Soft Skills:", className="text-light mb-2 fw-bold"),
                 html.Div([
-                    dbc.Badge("APIs REST & Postman", color="secondary", className="me-2 mb-2 p-2"),
-                    dbc.Badge("Autodesk Maya (3D)", color="secondary", className="me-2 mb-2 p-2"),
-                    dbc.Badge("Metodologias Ágeis (Scrum)", color="secondary", className="me-2 mb-2 p-2"),
+                    dbc.Badge("Inglês Avançado", color="success", className="me-2 mb-2 p-2"),
+                    dbc.Badge("Espanhol Básico", color="secondary", className="me-2 mb-2 p-2"),
+                    dbc.Badge("Metodologias Ágeis", color="secondary", className="me-2 mb-2 p-2"),
                 ])
             ])
         ], className="shadow mb-4 h-100", style={"backgroundColor": "#222", "borderColor": "#444"}), md=6),
